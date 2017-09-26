@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const NavbarStyle = styled.section`
@@ -15,7 +14,6 @@ const NavbarStyle = styled.section`
     align-items: center;
 
     .nav-header {
-      font-family: 'Roboto', Helvetica, sans-serif !important;
       margin-left: 16px;
       color: ${props => props.theme.white};
     }

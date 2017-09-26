@@ -12,7 +12,7 @@ const GifItem = (props) => {
 
   return (
     <div className='gif-item'>
-      <img src={gif.images.fixed_height_downsampled.url} />
+      <img src={gif.images.fixed_height_downsampled.url} alt='' />
     </div>
   )
 }

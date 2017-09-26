@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import history from './history'
 import { fetchSearches, fetchTrendingGifs } from './store'
 import App from './App'
-import { GifList } from './components'
+import { MainContainer, GifList } from './components'
 
 /* -----------------    COMPONENT     ------------------ */
 
@@ -20,12 +20,9 @@ class Routes extends Component {
       <Router history={history}>
         <App>
           <Switch>
-            <Switch>
-              <Route path='/home' component={App} />
-              <Route path='/searches/:searchId' component={GifList} />
-            </Switch>
-            {/* Displays our Login component as a fallback */}
-            <Route component={App} />
+            <Route path='/home' component={MainContainer} />
+            <Route path='/searches/:searchId' component={GifList} />
+            <Route component={MainContainer} />
           </Switch>
         </App>
       </Router>

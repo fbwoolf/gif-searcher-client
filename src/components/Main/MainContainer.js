@@ -1,15 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import SidebarStyle from './SidebarStyle'
-import SearchList from '../Search/SearchList'
+import MainStyle from './MainStyle'
+import GifList from '../Gif/GifList'
 
 /* -----------------    COMPONENT     ------------------ */
 
-const SidebarContainer = (props) => {
+const MainContainer = () => {
   return (
-    <SidebarStyle>
-      <SearchList />
-    </SidebarStyle>
+    <div>
+      <MainStyle>
+        <GifList />
+      </MainStyle>
+    </div>
   )
 }
 
@@ -18,4 +20,4 @@ const SidebarContainer = (props) => {
 const mapState = null
 const mapDispatch = null
 
-export default connect(mapState, mapDispatch)(SidebarContainer)
+export default connect(mapState, mapDispatch)(MainContainer)

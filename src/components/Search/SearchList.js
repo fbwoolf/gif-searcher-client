@@ -5,13 +5,12 @@ import { fetchTrendingGifs } from '../../store'
 import SearchItem from './SearchItem'
 
 const SearchList = (props) => {
-  const { currentUser, searches, handleClick } = props
+  const { searches, handleClick } = props
 
   return (
     <ul>
       {
         searches
-          .filter(search => search.userId === currentUser.id)
           .map(search => <SearchItem key={search.id} search={search} />)
       }
       <li>
@@ -21,7 +20,7 @@ const SearchList = (props) => {
   )
 }
 
-const mapState = ({ currentUser, searches }) => ({ currentUser, searches })
+const mapState = ({ searches }) => ({ searches })
 const mapDispatch = (dispatch, ownProps) => {
   return {
     handleClick (evt) {

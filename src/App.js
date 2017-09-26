@@ -1,19 +1,19 @@
+import './App.css'
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import { NavbarContainer, NewSearchEntry, SidebarContainer, GifList } from './components'
+import { NavbarContainer, NewSearchEntry, SidebarContainer } from './components'
 
 const App = (props) => {
   const {children} = props
 
   return (
-    <div id='main'>
+    <div className='App'>
       <NavbarContainer />
       <div>
         <NewSearchEntry />
         <SidebarContainer />
-        <GifList />
       </div>
       { children }
     </div>
