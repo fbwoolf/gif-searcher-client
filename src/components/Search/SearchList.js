@@ -11,10 +11,10 @@ const SearchList = (props) => {
     <ul>
       {
         searches
-          .map(search => <SearchItem key={search.id} search={search} />)
+          .map(search => <SearchItem key={search.word} search={search} />)
       }
       <li>
-        <NavLink to='/home' onClick={handleClick}>See All Trending</NavLink>
+        <NavLink to='/' onClick={handleClick}>See All Trending</NavLink>
       </li>
     </ul>
   )

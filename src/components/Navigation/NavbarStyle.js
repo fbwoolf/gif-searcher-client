@@ -15,7 +15,11 @@ const NavbarStyle = styled.section`
 
     .nav-header {
       margin-left: 16px;
-      color: ${props => props.theme.white};
+
+      a {
+        text-decoration: none;
+        color: ${props => props.theme.white};
+      }
     }
 
     ul {

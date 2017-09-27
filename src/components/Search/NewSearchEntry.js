@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import NewSearchStyle from './NewSearchStyle'
 import { requestGifs, writeSearchWord, addSearch } from '../../store'
 import SearchButton from './SearchButton'
+import history from '../../history'
 
 /* -----------------    COMPONENT     ------------------ */
 
@@ -37,10 +38,10 @@ const mapDispatch = (dispatch, ownProps) => {
     },
     handleSubmit (evt) {
       evt.preventDefault()
-      const { userId } = ownProps
       const word = evt.target.searchWord.value
-      dispatch(addSearch({ word, userId }))
+      dispatch(addSearch({ word }))
       dispatch(writeSearchWord(''))
+      history.push(`/searches/${word}`)
     }
   }
 }

@@ -10,7 +10,7 @@ const GifStyle = styled.section`
     color: ${props => props.theme.darkgrey};
 
     .gif-list {
-      margin: 1.5em 0;
+      margin: 0 1.5em;
       padding: 0;
       -moz-column-gap: 1.5em;
       -webkit-column-gap: 1.5em;

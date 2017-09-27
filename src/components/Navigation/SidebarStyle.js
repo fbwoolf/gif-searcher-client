@@ -29,7 +29,7 @@ const SidebarStyle = styled.section`
 
     ul {
       list-style: none;
-      margin: 0;
+      margin: 10px 0;
       padding: 0;
 
       li {

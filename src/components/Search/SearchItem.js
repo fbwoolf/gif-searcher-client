@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { fetchSearchWordGifs, removeSearch } from '../../store'
+import { fetchSearchWordGifs, removeSearch, fetchTrendingGifs } from '../../store'
 import RemoveSearchButton from './RemoveSearchButton'
+import history from '../../history'
 
 /* -----------------    COMPONENT     ------------------ */
 
@@ -12,7 +13,7 @@ const SearchItem = (props) => {
   return (
     <div>
       <li>
-        <NavLink activeClassName='active' to={`/searches/${search.id}`} onClick={handleClick}>
+        <NavLink activeClassName='active' to={`/searches/${search.word}`} onClick={handleClick}>
           { search.word }
         </NavLink>
         <RemoveSearchButton onClick={handleRemove}>
@@ -36,7 +37,9 @@ const mapDispatch = (dispatch, ownProps) => {
     handleRemove (evt) {
       evt.stopPropagation()
       const { search } = ownProps
-      dispatch(removeSearch(search.id))
+      dispatch(removeSearch(search.word))
+      dispatch(fetchTrendingGifs())
+      history.push('/')
     }
   }
 }
